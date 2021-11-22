@@ -1,0 +1,11 @@
+{
+  "name": "uscalt-react",
+  "version": "0.1.0",
+  "description": "A lightweight companion package for Uscalt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin Cunningham",
+  "license": "ISC"
+}
