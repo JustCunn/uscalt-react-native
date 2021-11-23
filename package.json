@@ -1,6 +1,6 @@
 {
-  "name": "uscalt-react",
-  "version": "0.1.0",
+  "name": "uscalt-react-native",
+  "version": "0.1.1",
   "description": "A lightweight companion package for Uscalt",
   "main": "index.js",
   "scripts": {
