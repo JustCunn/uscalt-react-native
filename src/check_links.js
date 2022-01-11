@@ -52,14 +52,16 @@ export async function checkLinks() {
                 }).catch(error => console.log('error=====5=======:', error))
             }
             else if (item.substring(0,15) === 't_party_nodata') {
-                
+                const link = item.slice(14)
+                UploadToThirdPartyNoData(link, secureToken)
             }
             else if (item.substring(0,7) === 't_party') {
                 // Send data to the company server
 
-                const off_id = item.substr(item.length - 30);
+                const off_id = item.substr(item.length - 10);
                 const link = item.slice(8).slice(0, -10) // Get the true link name
-
+                console.log(off_id)
+                console.log(link)
                 const signature = md5(function_object[link]())
                 const signatureBase = signature.toString();
                 const url = function_object['url']
@@ -113,7 +115,7 @@ async function UploadToThirdParty(device_hash, off_id, secureToken, link) {
     // Off_id: The reference to the link
     // secureToken: The login token
     // device_hash: the hash that belongs to this device
-
+    console.log('lol'+off_id)
     await fetch(`${function_object['url']}upload/`, {
         method: 'POST',
         headers: {
@@ -123,7 +125,6 @@ async function UploadToThirdParty(device_hash, off_id, secureToken, link) {
         body: JSON.stringify({
             'name': device_hash,
             'data': function_object[link](),
-            'link': link,
             'off_id': off_id,
         })
     })

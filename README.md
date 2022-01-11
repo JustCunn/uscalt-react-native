@@ -75,3 +75,12 @@ export const UscaltFunctions = {
     },
 }
 ```
+
+If you wish to use an implicit ID (an ID you can get from the server-side), return nothing:
+```javascript
+export const UscaltFunctions = {
+    "Genres": async function() {
+        return;
+    },
+}
+```
